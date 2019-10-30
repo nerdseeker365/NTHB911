@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nt.entity.Employee"  table="EMPLOYEE" >
+       <id name="eid" type="int">
+          <column name="EID" length="7" />
+       </id>
+       <property name="ename" type="string">
+            <column name="ENAME" length="15"/>
+       </property>
+       <property name="email" type="string">
+            <column name="EMAIL" length="15"/>
+       </property>
+       <property name="salary" type="int">
+            <column name="SALARY" length="6"/>
+       </property>
+    </class>
+    <query name="GET_EMP_DETAILS">
+        from  Employee where email like :dmn
+    </query>
+   <!--  <query name="GET_EMP_DETAILS_BY_SAL_RANGE">
+          from Employee where salary>=:start and salary&lt;=:end
+    </query> -->
+    
+     <query name="GET_EMP_DETAILS_BY_SAL_RANGE">
+         <![CDATA[ from Employee where salary>=:start and salary<=:end ]]>
+    </query> 
+    <query name="DELETE EMPS_BY_EID_RANGE">
+        <![CDATA[ delete from Employee where eid>=:min and eid<=:max ]]>
+    </query>
+    
+</hibernate-mapping>	

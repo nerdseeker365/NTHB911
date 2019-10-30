@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.nt.entity.Person"   table="TPCC_INH_PERSON_IM"  polymorphism="explicit">
+     <id name="pid"  length="10" type="int">
+        <generator class="increment"/>
+     </id>
+     <property name="pname" length="10" type="string"/>
+     <property name="company" length="10" type="string"/>
+    </class>
+     <class name="com.nt.entity.Employee"  table="TPCC_INH_EMPLOYEE_IM" polymorphism="explicit">
+        <id name="pid"  length="10" type="int">
+        <generator class="increment"/>
+     </id>
+     <property name="pname" length="10" type="string"/>
+     <property name="company" length="10" type="string"/>
+        <property name="desg" length="10" type="string"/>
+        <property name="salary" length="10" type="float" precision="2"/>
+     </class>
+     <class name="com.nt.entity.Customer"  table="TPCC_INH_CUSTOMER_IM"  polymorphism="explicit">
+     <id name="pid"  length="10" type="int">
+        <generator class="increment"/>
+     </id>
+     <property name="pname" length="10" type="string"/>
+     <property name="company" length="10" type="string"/>
+        <property name="addrs" length="10" type="string"/>
+        <property name="billAmt" length="10" type="float" precision="2"/>
+     </class>
+
+</hibernate-mapping>

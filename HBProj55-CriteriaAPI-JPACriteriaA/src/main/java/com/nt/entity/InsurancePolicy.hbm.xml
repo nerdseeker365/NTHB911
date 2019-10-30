@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.nt.entity.InsurancePolicy">
+       <id name="policyId" type="int" length="10"/>
+       <property name="policyName" type="string" length="20"/>
+       <property name="policyHolderName" type="string" length="20"/>
+       <property name="tenure" type="int" length="5"/>
+    </class>
+    <sql-query name="GET_ALL_POLICIES_BY_TENURE_RANGE">
+       <return class="com.nt.entity.InsurancePolicy"/>
+        <![CDATA[ SELECT  POLICYID,POLICYNAME,POLICYHOLDERNAME,TENURE FROM INSURANCEPOLICY WHERE TENURE>=? AND TENURE<=? ]]>
+    </sql-query>
+    
+    <sql-query name="GET_POLICY_DETAILS_BY_NAMES">
+       <return-scalar column="POLICYNAME" type="string" />
+       <return-scalar column="TENURE"  type="int"/>
+        SELECT  POLICYNAME,TENURE FROM INSURANCEPOLICY   WHERE POLICYHOLDERNAME   IN(:name1,:name2,:name3)
+    </sql-query>
+
+</hibernate-mapping>	

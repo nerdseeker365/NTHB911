@@ -1,0 +1,8 @@
+SQL> create table TPCH_INH_PERSON(pid number(5) primary key,
+                                                                       pname varchar2(10),
+                                                                       company varchar2(10),
+                                                                       desg varchar2(10),
+                                                                       salary number(8,2),
+                                                                       addrs varchar2(10),
+                                                                       billAmt number(8,2),
+                                                                       person_type varchar2(5));

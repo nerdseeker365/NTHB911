@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+     
+   <class name="com.nt.entity.StockInfo">
+       <id name="stockId" type="int" length="10">
+           <generator class="sequence"/>
+       </id>
+        <timestamp  name="lastUpdated"  />
+       <property name="stockName" type="string"  length="15" not-null="true" unique="true"/>
+       <property name="company" type="string"  length="20"  not-null="true"/>
+       <property name="price" type="int"  length="10"  />
+   </class>
+   
+</hibernate-mapping>	

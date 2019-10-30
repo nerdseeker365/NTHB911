@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.BankAccount"  table="BANKACCOUNT"   dynamic-update="true">
+     <id name="acno"  type="int">
+        <column name="ACNO" length="5"/>
+     </id>
+     <property name="holderName" type="string">
+        <column name="HOLDERNAME" length="20" />
+     </property>
+     <property name="balance" type="float">
+        <column name="BALANCE"  length="10" precision="2" />
+     </property>
+     <property name="type" type="string">
+        <column name="TYPE"  length="10" />
+     </property>
+   </class>
+</hibernate-mapping>

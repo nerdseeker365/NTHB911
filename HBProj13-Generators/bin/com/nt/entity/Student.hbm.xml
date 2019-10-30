@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nt.entity.Student"  table="STUDENT" >
+       <!-- <id name="sno" type="int">
+          <column name="SNO" length="7" />
+          <generator class="assigned"/>
+          <generator class="org.hibernate.id.Assigned"/>
+       </id> -->
+<!--        <id name="sno" type="int">
+          <column name="SNO" length="7" />
+          <generator class="increment"/>
+       </id>
+ --> 
+   <!--   <id name="sno" type="int">
+          <column name="SNO" length="7" />
+          <generator class="identity"/>
+       </id>  -->
+      <!--   <id name="sno"  type="int">
+             <column name="SNO" length="7"/>
+             <generator class="sequence"/>
+       </id>  -->
+       <!--   <id name="sno"  type="int">
+             <column name="SNO" length="7"/>
+             <generator class="sequence">
+                <param name="sequence_name">sno_seq</param>
+             </generator>
+       </id> -->
+       <!--  <id name="sno"  type="int">
+             <column name="SNO" length="7"/>
+             <generator class="hilo">
+                <param name="table">HI_TAB</param>
+                <param name="column">HI_COL</param>
+                <param name="max_lo">5</param>
+             </generator>
+       </id>  -->
+       
+     <!--      <id name="sno"  type="int">
+             <column name="SNO" length="7"/>
+             <generator class="hilo">
+                <param name="max_lo">5</param>
+             </generator>
+       </id>  -->
+       
+      <!--  <id name="sno"  type="int">
+            <column name="SNO" length="7"/>
+            <generator class="seqhilo">
+                <param name="sequence">sno_seq</param>
+                <param name="max_lo">5</param>
+            </generator>
+       </id>  -->
+       
+      <!--  <id name="sno"  type="int">
+            <column name="SNO" length="7"/>
+            <generator class="seqhilo">
+                <param name="max_lo">5</param>
+            </generator>
+       </id>
+        -->
+        
+       <!--  <id name="sno" column="SNO" type="int">
+           <generator class="native">
+               <param name="sequence">sno_seq</param>
+           </generator>
+        </id> -->
+        
+          <!-- <id name="sno" column="SNO" type="int">
+           <generator class="native"/>
+        </id> -->
+        
+        <!--  <id name="sno" column="SNO" type="int">
+           <generator class="native">
+               <param name="sequence">sno_seq</param>
+           </generator>
+        </id> -->
+        
+        <id name="sno"  column="SNO" type="int">
+            <generator class="select">
+               <param name="key">email</param>
+            </generator>
+        </id>
+       
+       <property name="sname" type="string">
+            <column name="SNAME" length="15"/>
+       </property>
+       <property name="sadd" type="string">
+            <column name="SADD" length="15"/>
+       </property>
+       <property name="email" type="string" unique="true">
+            <column name="EMAIL" length="20"/>
+       </property>
+    </class>
+</hibernate-mapping>	

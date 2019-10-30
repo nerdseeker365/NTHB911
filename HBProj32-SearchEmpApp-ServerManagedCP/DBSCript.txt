@@ -1,0 +1,7 @@
+SQL> desc Employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                       NOT NULL NUMBER(10)
+ ENAME                                     NOT NULL VARCHAR2(15 CHAR)
+ EMAIL                                     NOT NULL VARCHAR2(20 CHAR)
+ SALARY                                             NUMBER(10)

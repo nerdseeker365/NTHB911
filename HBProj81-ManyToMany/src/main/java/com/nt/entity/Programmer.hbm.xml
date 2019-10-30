@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.Programmer"  table="PROGRAMMER">
+        <id name="pid"  type="int" length="10">
+           <generator class="increment"/>
+        </id>
+        <property name="pname"  type="string" length="10"/>
+        <property name="salary" type="int" length="10"/>
+        <set name="projects" cascade="all" lazy="true" inverse="true"   table="PROGRAMMERS_PROJECTS" >
+              <key column="programmer_id"/>
+             <many-to-many class="com.nt.entity.Project"  column="project_id"  />
+        </set>
+   </class>
+</hibernate-mapping>
+
+
+<!-- SQL> create sequence aadhar_seq start with 10000 increment by 1; -->

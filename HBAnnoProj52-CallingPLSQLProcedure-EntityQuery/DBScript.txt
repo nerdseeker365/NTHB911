@@ -1,0 +1,7 @@
+create or replace procedure p_getEmployees_By_EId_Range(details out sys_refcursor,startEid in number,endEid in number)
+as
+begin
+    open details for
+         select *  from Employee where eid>=startEid and eid<=endEid;
+end;
+/

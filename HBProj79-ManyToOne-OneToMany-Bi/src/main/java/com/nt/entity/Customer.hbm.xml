@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.Customer"  table="CUSTOMER">
+        <id name="aadharNo"  type="long" length="10">
+           <generator class="sequence">
+               <param name="sequence_name">aadhar_seq</param>
+           </generator>
+        </id>
+        <property name="name"  type="string" length="15"/>
+        <property name="addrs" type="string" length="10"/>
+        <set name="accounts" cascade="all-delete-orphan" lazy="extra" inverse="false" >
+             <key column="aadharId"/>
+             <one-to-many class="com.nt.entity.BankAccount"/>
+        </set>
+   </class>
+</hibernate-mapping>
+
+
+<!-- SQL> create sequence aadhar_seq start with 10000 increment by 1; -->

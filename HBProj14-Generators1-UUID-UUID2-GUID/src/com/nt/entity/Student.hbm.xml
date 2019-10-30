@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nt.entity.Student"  table="STUDENT1" >
+        <!-- <id name="sno"  column="SNO" type="string">
+           <generator class="uuid2"/>
+        </id> -->
+        
+<!--          <id name="sno"  column="SNO" type="string">
+           <generator class="uuid"/>
+        </id>
+ -->        
+         <id name="sno" column="SNO" type="string">
+              <generator class="guid"/>
+         </id> 
+        
+        
+        
+        
+       <property name="sname" type="string">
+            <column name="SNAME" length="15"/>
+       </property>
+       <property name="sadd" type="string">
+            <column name="SADD" length="15"/>
+       </property>
+    </class>
+</hibernate-mapping>	

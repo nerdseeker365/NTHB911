@@ -1,0 +1,14 @@
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                       NOT NULL NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ EMAIL                                              VARCHAR2(20)
+ SALARY                                             NUMBER(10,2)
+
+SQL> desc NGOMember;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MID                                       NOT NULL NUMBER(5)
+ NAME                                               VARCHAR2(20)
+ SALARY                                             NUMBER(10,2)

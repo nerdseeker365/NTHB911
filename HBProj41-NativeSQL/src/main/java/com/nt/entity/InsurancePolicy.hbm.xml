@@ -1,0 +1,12 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.nt.entity.InsurancePolicy">
+       <id name="policyId" type="int" length="10"/>
+       <property name="policyName" type="string" length="20"/>
+       <property name="policyHolderName" type="string" length="20"/>
+       <property name="tenure" type="int" length="5"/>
+    </class>
+
+</hibernate-mapping>	

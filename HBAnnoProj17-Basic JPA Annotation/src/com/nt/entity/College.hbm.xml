@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+   <!-- <class name="com.nt.entity.Employee"  table="EMPLOYEE" dynamic-insert="true">
+       Singular ID filed Cfg
+        <id name="eid"  column="EID">
+           <generator class="increment"></generator>
+        </id>
+        
+        <property name="ename"  column="ENAME"/>
+        <property name="email"  column="EMAIL"/>
+        <property name="salary"  column="SALARY"/>
+   </class> -->
+   
+   <!-- <class name="com.nt.entity.Employee"  >
+        <id name="eid"/>
+        <property name="ename"/>
+        <property name="email" />
+        <property name="salary"/>
+   </class> -->
+   
+   <class name="com.nt.entity.College" >
+       <id name="id"  length="10" type="int" >
+           <generator class="increment"/>
+       </id>
+       <property name="name" length="15" type="string"  not-null="true"  />
+       <property name="location"  length="20" type="string" not-null="true" />
+       <property name="grade"   length="10" type="string" />
+       <property name="strength"   length="10" type="int" />
+   </class>
+   
+</hibernate-mapping>	

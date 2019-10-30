@@ -1,0 +1,9 @@
+SQL> desc luckydrawcupon1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUPONNUMBER                               NOT NULL VARCHAR2(10)
+ CUSTNAME                                           VARCHAR2(20 CHAR)
+ CUSTMOBILENO                                       NUMBER(19)
+ CUSTADDRS                                          VARCHAR2(20 CHAR)
+ 
+ SQL> create sequence NIT_SEQ start with 1 increment by 1;

@@ -1,0 +1,8 @@
+SQL> desc luckydrawcupon;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUPONNUMBER                               NOT NULL NUMBER(19)
+ CUSTNAME                                           VARCHAR2(20 CHAR)
+ CUSTMOBILENO                                       NUMBER(19)
+ CUSTADDRS                                          VARCHAR2(20 CHAR)
+ 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.BrandFactory"  table="BRANDFACTORY"   dynamic-update="true" >
+     <id name="custMobileNo"  type="long"  >
+        <column name="CUSTMOBILENO" length="11"/>
+     </id>
+     <property name="custName" type="string">
+        <column name="CUSTNAME" length="20" />
+     </property>
+     <property name="custAddrs" type="string">
+        <column name="CUSTADDRS"  length="20" />
+     </property>
+     <property name="rewardPoints" type="int">
+        <column name="REWARDPOINTS"  length="10" />
+     </property>
+   </class>
+</hibernate-mapping>

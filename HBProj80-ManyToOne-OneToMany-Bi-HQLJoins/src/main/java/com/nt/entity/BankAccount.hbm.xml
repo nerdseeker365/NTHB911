@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.BankAccount"  table="BANKACCOUNT">
+      <id name="acno" type="long" length="10">
+         <generator class="increment"/>
+      </id>
+       <property name="bankName" type="string" length="10"/>
+       <property name="branch" type="string"  length="10"/>
+       <property name="balance" type="float"  precision="2" scale="10"/>
+       <many-to-one name="cust"  class="com.nt.entity.Customer" column="aadharId" cascade="all"   lazy="proxy"/>
+   </class>
+</hibernate-mapping>

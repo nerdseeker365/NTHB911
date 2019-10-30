@@ -1,0 +1,1 @@
+SQL> create table STOCKINFO(stockId number(5) primary key,stockName varchar2(20),company varchar2(20),price number(10),lastUpdated timestamp);

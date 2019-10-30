@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.License"  table="LICENSE_OTO">
+        <id name="lid"  type="int" length="10">
+            <generator class="sequence">
+                 <param name="sequence_name">lid_seq</param>
+            </generator>
+        </id>
+        <property name="type"  type="string" length="10"/>
+        <property name="validFrom" type="date"  />
+        <property name="validTo" type="date"  />
+        <many-to-one name="licenseHolder"
+                                   class="com.nt.entity.Person"
+                                   column="license_holder"
+                                   cascade="all-delete-orphan"
+                                   lazy="false"
+                                     unique="true" not-null="true"/>
+   </class>
+</hibernate-mapping>
+
+
+<!-- SQL> create sequence lid_seq start with 1000 increment by 1; -->
+

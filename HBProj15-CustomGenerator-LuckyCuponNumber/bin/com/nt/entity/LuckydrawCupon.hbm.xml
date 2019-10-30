@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nt.entity.LuckyDrawCupon" >
+        <id name="cuponNumber"   type="int"  length="10">
+            <generator class="com.nt.generator.CustomCuponIdGenerator"/>
+        </id>
+       
+       <property name="custName" type="string" length="20"/>
+       <property name="custMobileNo" type="long" unique="true" length="10"/>
+       <property name="custAddrs" type="string" length="20" />
+    </class>
+</hibernate-mapping>	

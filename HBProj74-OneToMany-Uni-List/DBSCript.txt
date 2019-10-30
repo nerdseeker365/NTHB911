@@ -1,0 +1,3 @@
+SQL> create table user_tab(userId number(5) primary key,username varchar2(20));
+
+SQL> create table PHONE_NUMBERS(phone number(10) primary key,numberType varchar2(10),provider varchar2(10),unid references user_tab(userId));

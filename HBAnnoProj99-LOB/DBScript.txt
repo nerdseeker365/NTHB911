@@ -1,0 +1,1 @@
+SQL> create table LOB_Employee(eid number(5) primary key,ename varchar2(10),salary number(10,2),ephoto blob,eresume clob);

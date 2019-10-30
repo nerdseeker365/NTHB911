@@ -1,0 +1,21 @@
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                       NOT NULL NUMBER(5)
+ SNAME                                              VARCHAR2(20)
+ SADD                                               VARCHAR2(20)
+ ---Trigger for "select " generator----
+ create or replace trigger  SNO_TRGR
+  2    before insert  on Student  for each row
+  3    declare
+  4        stno number(5);
+  5   begin
+  6     -- get sequence generated value
+  7     select   sno_seq.nextVal into stno from dual;
+  8     -- update sno with sequence value
+  9      :new.sno:=stno;
+ 10* end;
+ 11  /
+Trigger created.
+
+SQL> create  sequence sno_seq start with 500 increment by 10;

@@ -1,0 +1,6 @@
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                         Varchar2(40)  
+ SNAME                                              VARCHAR2(20)
+ SADD                                               VARCHAR2(20)
